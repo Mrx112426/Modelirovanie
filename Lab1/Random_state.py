@@ -74,10 +74,10 @@ for N in N_values:
         axes[1].set_xlabel('Значение')
         axes[1].set_ylabel('F(x)')
 
-        axes[2].scatter(range(len(data)), data, s=1, color='blue')
+        axes[2].scatter(data[:-1:2], data[1::2], s=1, color='blue')
         axes[2].set_title('Точечный график')
-        axes[2].set_xlabel('Индекс')
-        axes[2].set_ylabel('Значение')
+        axes[2].set_xlabel('R_n')
+        axes[2].set_ylabel('R_n+1')
 
         plt.suptitle(f"{method_names[method]} (N={N})")
         plt.savefig(png_file)
